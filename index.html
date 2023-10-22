@@ -1,0 +1,164 @@
+
+<html lang="en">
+  <head>
+    <title>Ecommerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <button id="title-button">Ecommerce Store</button>
+      <div id="searchbar">
+        <input type="text" id="search-term" placeholder="Search for products">
+        <button type="button" id="search-button" class="disabled" disabled>Search</button>
+      </div>
+      <ul>
+        <li><button id="cart-button">Cart</button></li>
+        <li><button id="account-button">Sign In/Sign Up</button></li>
+      </ul>
+    </nav>
+    <section id="products" class="container">
+      <div class="heading">
+        <div>
+          <h3 id="products-title">All Products</h3>
+          <button id="reset-search" class="text-button hidden">Reset Search</button>
+        </div>
+        <button id="change-display" class="text-button">Show as List</button>
+      </div>
+      <article id="products-area">
+        <aside>
+          <h5 class="subtitle">Filters</h5>
+          <div class="filter">
+            <h4>Category</h4>
+            <ul id="category-filter"></ul>
+          </div>
+        </aside>
+        <section id="all-products" class="grid"></section>
+      </article>
+    </section>
+    <section id="cart" class="hidden container">
+      <div class="heading">
+        <h3>My Cart</h3>
+        <p id="cart-count">0 Products</p>
+      </div>
+      <ul id="cart-items"></ul>
+      <p id="cart-total">Total: $0.00</p>
+      <button id="checkout-button" class="text-button disabled">
+        You must be logged in before checking out.
+      </button>
+      <button id="confirm-transaction" class="button hidden">Confirm</button>
+      <p id="checkout-error" class="error-message"></p>
+    </section>
+    <section id="user" class="hidden container">
+      <div id="user-main">
+        <div>
+          <h3 class="title">Sign in with your Account</h3>
+          <p class="text"></p>
+          <form id="login-account-form">
+            <div class="input-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" placeholder=
+              "Enter your username" required>
+            </div>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder=
+              "Enter your password" required>
+            </div>
+            <button type="submit" class="button">Sign In</button>
+          </form>
+          <p id="login-account-error" class="error-message"></p>
+        </div>
+        <div>
+          <h3 class="title">Sign up for an Account</h3>
+          <p class="text"></p>
+          <form id="create-account-form">
+            <div class="input-group">
+              <label for="new-name">Name</label>
+              <input type="text" id="new-name" name="name" placeholder=
+              "Enter a name" required>
+            </div>
+            <div class="input-group">
+              <label for="new-username">Username</label>
+              <input type="text" id="new-username" name="username" placeholder=
+              "Enter a username" required>
+            </div>
+            <div class="input-group">
+              <label for="new-email">Email</label>
+              <input type="email" id="new-email" name="email" placeholder=
+              "Enter your email" required>
+            </div>
+            <div class="input-group">
+              <label for="new-password">Password</label>
+              <input type="password" id="new-password" name="password" placeholder=
+              "Enter a password" required>
+            </div>
+            <button type="submit" class="button">Create Account</button>
+          </form>
+          <p id="create-account-error" class="error-message"></p>
+        </div>
+      </div>
+      <div id="user-account" class="hidden">
+        <section>
+          <div class="heading">
+            <div id="user-info">
+              <h3 class="title" id="welcome-message"></h3>
+              <p class="text" id="user-details"></p>
+            </div>
+            <button id="logout-button" class="button">Logout</button>
+          </div>
+        </section>
+        <hr>
+        <article id="account-info">
+          <section id="account-funds">
+            <h5 class="subtitle">Account Balance</h5>
+            <p id="account-balance">$0.00</p>
+            <hr>
+            <form id="add-funds-form">
+              <div class="input-group">
+                <label for="add-funds">Add Funds</label>
+                <input type="number" id="add-funds" name="funds" placeholder=
+                "Enter amount to add" required>
+              </div>
+              <button type="submit" class="button">Add Funds</button>
+            </form>
+            <p id="add-funds-error" class="error-message"></p>
+          </section>
+          <section id="account-transactions">
+            <h5 class="subtitle">Transaction History</h5>
+            <hr>
+            <ul id="transactions"></ul>
+          </section>
+        </article>
+      </div>
+    </section>
+    <section id="product" class="hidden container">
+      <div class="heading">
+        <button id="back-button" class="button">&larr; Back</button>
+        <h3>Product Name</h3>
+      </div>
+      <div class="product-details">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/500" alt="Product Image">
+        </div>
+        <div class="product-info">
+          <div class="product-review-stars"></div>
+          <p class="product-category"></p>
+          <p class="product-price">$0.00</p>
+          <p class="product-description">Product Description</p>
+          <button class="button" id="add-to-cart-button">Add to Cart</button>
+          <p class="product-quantity"></p>
+        </div>
+      </div>
+    </section>
+    <div id="error-notif" class="hidden">
+      <p></p>
+      <button id="close-error-notif">Close</button>
+    </div>
+    <footer>
+      <p>All images found via Google Images Search</p>
+      <!-- Based on https://edstem.org/us/courses/37902/discussion/3169954 -->
+    </footer>
+  </body>
+</html>
