@@ -1,0 +1,706 @@
+:root {
+  --nav-color: #1e293b;
+  --color-white: #ffffff;
+  --color-gray: #4a5568;
+  --border-color: #e2e8f0;
+  --nav-input-border-color: #cbd5e1;
+  --nav-border-color: #334155;
+  --text-color: #0f172a;
+  --btn-color: #2563eb;
+  --btn-hover-color: #1e40af;
+  --delete-btn-color: #e53e3e;
+  --delete-btn-hover-color: #c53030;
+  --shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+nav,
+nav ul,
+#searchbar,
+#all-products.grid,
+#all-products.grid .product-card .card-info,
+#all-products.list .product-card,
+#cart-items .product-card,
+#all-products.list .product-card .card-info,
+#cart-items .product-card .card-info,
+.heading,
+#transactions .transaction,
+#transactions .transaction .end,
+.product-details {
+  display: flex;
+}
+
+nav {
+  background-color: var(--nav-color);
+  padding: 0.25rem 1rem;
+  top: 0;
+  border-bottom: 1px solid var(--nav-border-color);
+}
+
+nav #title-button {
+  background: none;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li button {
+  padding: 0.35rem 0.75rem;
+}
+
+nav ul li button:hover {
+  background-color: var(--border-color);
+}
+
+#searchbar {
+  min-width: 20rem;
+}
+
+#searchbar input {
+  width: 80%;
+}
+
+#close-error-notif, #searchbar input {
+  border-radius: 100px;
+}
+
+#searchbar input:focus {
+  border-color: var(--btn-color);
+}
+
+#search-button {
+  border: 1px solid var(--btn-color);
+}
+
+#search-button:hover {
+  border: 1px solid var(--btn-hover-color);
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  padding-top: 2rem;
+}
+
+#products-area {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+#all-products {
+  grid-area: 1 / 2 / 2 / 6;
+}
+
+#all-products.grid .product-card {
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+  width: 15rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+#all-products .product-card img,
+#cart-items .product-card img {
+  height: 10rem;
+  object-fit: contain;
+  object-position: center;
+}
+
+#all-products.grid .product-card .card-info {
+  align-items: baseline;
+}
+
+#all-products.grid .product-card:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#all-products.list .product-card,
+#cart-items .product-card {
+  justify-content: start;
+}
+
+#all-products.list .product-card img,
+#cart-items .product-card img {
+  width: 8rem;
+  height: 8rem;
+  margin-right: 1rem;
+}
+
+#all-products.list .product-card .card-body,
+#cart-items .product-card .card-body {
+  height: 100%;
+}
+
+#all-products.list .product-card .card-body p,
+#cart-items .product-card .card-body p {
+  color: #4a5568;
+}
+
+.button {
+  border: 2px solid var(--btn-color);
+}
+
+.button.disabled,
+#search-button.disabled,
+.text-button.disabled {
+  opacity: 0.5;
+}
+
+.button:hover {
+  border-color: var(--btn-hover-color);
+}
+
+#user-main {
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.hidden,
+#user-main.hidden,
+.product-card.hidden {
+  display: none;
+}
+
+#transactions .transaction {
+  align-items: start;
+}
+
+#transactions .transaction .total {
+  margin-top: 1rem;
+}
+
+#transactions .transaction ul.items li {
+  margin-top: 0.25rem;
+}
+
+.product-details .product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.product-details .product-info .product-description {
+  margin-bottom: 1.5rem;
+}
+
+.error-message, #close-error-notif {
+  color: red;
+}
+
+#error-notif, .error-message {
+  font-weight: 700;
+}
+
+nav, #error-notif {
+  z-index: 100;
+}
+
+#error-notif {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 1rem;
+  background-color: red;
+  color: white;
+}
+
+#error-notif p {
+  display: inline;
+}
+
+#close-error-notif {
+  background: white;
+  padding: 0.25rem 0.5rem;
+  margin-left: 1rem;
+}
+
+body,
+nav #title-button,
+nav ul,
+#all-products.grid .product-card .card-price,
+.product-card .card-body h5,
+.product-card .card-body,
+#all-products.list .product-card .card-price,
+#cart-items .product-card .card-price,
+.product-card .card-body .card-desc,
+h3.title,
+.heading h3,
+h5.subtitle,
+#transactions,
+#transactions .transaction .date,
+#transactions .transaction .name,
+#transactions .transaction .total,
+#transactions .transaction .confirmation,
+#transactions .transaction ul.items li,
+#products-area aside .filter ul,
+#user-account .subtitle,
+.filter ul {
+  margin: 0;
+}
+
+nav,
+nav #title-button,
+#search-button,
+.button {
+  color: var(--color-white);
+}
+
+nav,
+#all-products.grid .product-card .card-info,
+.heading,
+#transactions .transaction,
+.product-details {
+  justify-content: space-between;
+}
+
+nav,
+nav ul,
+nav ul li button,
+#searchbar,
+#search-button,
+#all-products.grid,
+#all-products.list .product-card,
+#cart-items .product-card,
+.heading,
+.product-details {
+  align-items: center;
+}
+
+nav #title-button,
+nav ul li button {
+  white-space: nowrap;
+}
+
+nav #title-button,
+#all-products.grid .product-card .card-price,
+#all-products.list .product-card .card-body h5,
+#cart-items .product-card .card-body h5,
+#transactions .transaction .name,
+.filter h4 {
+  font-size: 1.25rem;
+}
+
+nav #title-button,
+nav ul li button,
+#searchbar input,
+#search-button,
+#all-products.grid .product-card .card-body h5,
+#all-products.grid .product-card .card-price,
+#all-products.list .product-card .card-body h5,
+#cart-items .product-card .card-body h5,
+#all-products.list .product-card .card-price,
+#cart-items .product-card .card-price,
+.button,
+#transactions .transaction .total,
+.filter ul li,
+.text-button,
+.total-products,
+#cart-count,
+.product-quantity,
+#cart-items .quantity {
+  font-weight: 500;
+}
+
+nav #title-button:hover,
+nav ul li button:hover,
+#search-button:hover,
+#all-products .product-card:hover,
+.button:hover,
+#close-error-notif:hover,
+.text-button:hover {
+  cursor: pointer;
+}
+
+#all-products .product-card:hover,
+#close-error-notif:hover {
+  opacity: 0.75;
+}
+
+nav ul,
+#transactions,
+#products-area aside .filter ul,
+.filter ul {
+  list-style: none;
+}
+
+nav ul,
+#all-products.list .product-card .card-info,
+#cart-items .product-card .card-info,
+#transactions .transaction .end {
+  justify-content: end;
+}
+
+nav ul,
+#cart-items,
+#transactions,
+#products-area aside .filter ul,
+.text-button,
+.filter ul {
+  padding: 0;
+}
+
+nav ul li,
+#search-button {
+  margin-left: 0.5rem;
+}
+
+nav ul li button,
+#search-button,
+.button {
+  border-radius: 50px;
+}
+
+nav ul li button,
+form .input-group label {
+  color: var(--text-color);
+}
+
+nav ul li button,
+#all-products.grid .product-card,
+.product-details {
+  background-color: var(--color-white);
+}
+
+nav ul li button,
+nav ul li button:hover,
+#searchbar input {
+  border: 1px solid var(--nav-input-border-color);
+}
+
+nav ul li button,
+#searchbar input,
+.product-card .card-body .card-desc,
+p.text,
+#transactions .transaction .date,
+#transactions .transaction .confirmation,
+#products-area aside .filter ul li label,
+.error-message,
+.text-button,
+.total-products,
+#cart-count,
+.product-quantity,
+#cart-items .quantity {
+  font-size: 0.85rem;
+}
+
+nav ul li button, #search-button {
+  display: inline-flex;
+}
+
+nav ul li button,
+#searchbar input,
+#search-button,
+#all-products .product-card,
+.button,
+form .input-group input {
+  transition: all 0.2s ease-in-out;
+}
+
+#searchbar,
+#all-products.grid {
+  justify-content: center;
+}
+
+#searchbar,
+.button,
+form .input-group input {
+  padding: 0.5rem 1rem;
+}
+
+#searchbar,
+#all-products.grid .product-card img,
+#all-products.list .product-card .card-body,
+#cart-items .product-card .card-body,
+#all-products.list .product-card .card-info,
+#cart-items .product-card .card-info,
+form .input-group input {
+  width: 100%;
+}
+
+#searchbar input,
+#search-button {
+  padding: 0.75rem 1rem;
+}
+
+#searchbar input:focus,
+form .input-group input {
+  outline: none;
+}
+
+#search-button, .button {
+  background-color: var(--btn-color);
+}
+
+#search-button:hover, .button:hover {
+  background-color: var(--btn-hover-color);
+}
+
+#all-products.grid,
+.product-details {
+  flex-wrap: wrap;
+}
+
+#all-products.grid .product-card,
+#all-products.list .product-card img,
+#cart-items .product-card img,
+form .input-group input,
+.product-details,
+#error-notif,
+.filter {
+  border-radius: 0.5rem;
+}
+
+#all-products.grid .product-card,
+form .input-group input {
+  border: 1px solid #e2e8f0;
+}
+
+#all-products.grid .product-card,
+.product-details {
+  box-shadow: var(--shadow);
+}
+
+#all-products.grid .product-card img,
+#all-products.grid .product-card .card-body {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+#all-products.grid .product-card .card-body,
+#all-products.grid .product-card .card-info,
+#error-notif,
+#user-account section,
+footer,
+.filter {
+  padding: 1rem;
+}
+
+#all-products.grid .product-card .card-body h5,
+form .input-group label,
+form .input-group input,
+.product-details .product-info button.button,
+#transactions .transaction ul.items li {
+  font-size: 1rem;
+}
+
+#all-products .product-card .card-body h5,
+.product-card .card-body .card-desc,
+#transactions .transaction .name,
+#transactions .transaction ul.items,
+.error-message {
+  margin-top: 0.5rem;
+}
+
+#all-products.grid .product-card .card-body p,
+p.text,
+#transactions .transaction .date,
+#transactions .transaction .confirmation,
+#transactions .transaction ul.items li,
+.product-details .product-info .product-description,
+.product-details .product-info .product-quantity,
+#products-area aside .filter ul li label,
+.text-button,
+.text-button:hover {
+  color: var(--color-gray);
+}
+
+#all-products.grid .product-card .review-star,
+#all-products.list .product-card .review-star,
+#cart-items .product-card .review-star {
+  margin-left: 0.25rem;
+}
+
+#all-products.list .product-card,
+#cart-items .product-card,
+#transactions .transaction {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0rem;
+}
+
+#all-products.list .product-card:last-child,
+#cart-items .product-card:last-child,
+#transactions .transaction:last-child {
+  border-bottom: none;
+}
+
+#all-products.list .product-card .card-info,
+#cart-items .product-card .card-info,
+#transactions .transaction .end {
+  flex-direction: column;
+  align-items: end;
+}
+
+#all-products.list .product-card .card-price,
+#cart-items .product-card .card-price,
+h3.title,
+.heading h3 {
+  font-size: 2rem;
+}
+
+#user-main,
+#products-area,
+#account-info {
+  display: grid;
+}
+
+form .input-group,
+form .input-group label {
+  display: block;
+}
+
+form .input-group,
+#transactions .transaction .confirmation {
+  margin-bottom: 1rem;
+}
+
+form .input-group label,
+#products-area aside .filter ul li,
+#account-balance,
+.product-price,
+#cart-total,
+.text-button,
+.filter ul li {
+  margin: 0.5rem 0rem;
+}
+
+form .input-group label,
+h3.title,
+.heading h3,
+h5.subtitle,
+#transactions .transaction .name,
+.product-details .product-info button.button,
+#account-balance,
+.product-price,
+#cart-total,
+.card-category,
+.product-category,
+.filter h4 {
+  font-weight: 600;
+}
+
+h5.subtitle,
+#transactions .transaction .total,
+#cart-total {
+  font-size: 1.5rem;
+}
+
+h5.subtitle,
+.product-details {
+  margin-top: 1.5rem;
+}
+
+.product-details .product-image,
+.product-details .product-info {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+#account-balance,
+.product-price {
+  font-size: 3rem;
+}
+
+#account-info {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+#account-funds {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+#account-transactions {
+  grid-area: 1 / 2 / 2 / 5;
+}
+
+.text-button {
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.total-products,
+#cart-count,
+.product-quantity,
+#cart-items .quantity,
+.card-category,
+.product-category {
+  text-transform: uppercase;
+}
+
+#logout-button.button {
+  background: var(--delete-btn-color);
+  border: var(--delete-btn-hover-color);
+}
+
+#logout-button.button:hover {
+  background: var(--delete-btn-hover-color);
+}
+
+footer {
+  background: var(--border-color);
+}
+
+.card-category {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.product-category {
+  margin: 1rem 0rem 0.5rem 0rem;
+}
+
+.filter {
+  top: 6rem;
+}
+
+.filter h4 {
+  margin: 0.5rem 0 1rem 0rem;
+}
+
+nav,
+.filter {
+  position: sticky;
+}
+
+nav #title-button,
+.text-button:hover {
+  text-decoration: none;
+}
+
+#close-error-notif,
+nav #title-button,
+.text-button {
+  border: none;
+}
+
+#products-area,
+#account-info {
+  grid-template-rows: 1fr;
+}
+
+#products-area aside .filter ul li input,
+.product-review-stars .review-star {
+  margin-right: 0.5rem;
+}
+
+.product-details .product-image,
+footer {
+  text-align: center;
+}
+
+hr,
+.filter {
+  border: 1px solid var(--border-color);
+  margin: 1rem 0rem;
+}
+
+.product-category,
+.filter ul li {
+  font-size: 0.9rem;
+}
